@@ -3,8 +3,6 @@ const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
 const utils = require('./utils.js');
 const environment = require('./environment');
 
@@ -91,14 +89,6 @@ module.exports = async options => {
           VERSION: JSON.stringify(environment.VERSION),
           SERVER_API_URL: JSON.stringify(environment.SERVER_API_URL),
         }),
-        new ESLintPlugin({
-          baseConfig: {
-            parserOptions: {
-              project: ['../tsconfig.json'],
-            },
-          },
-        }),
-        new ForkTsCheckerWebpackPlugin(),
         new CopyWebpackPlugin({
           patterns: [
             {
