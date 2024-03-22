@@ -19,7 +19,7 @@ public class WhereQConfiguration {
     @Value("${whereq.upload.dir}")
     private String uploadDir;
 
-    @Value("${whereq.openai.api-key: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}")
+    @Value("${whereq.openai.api-key:''}")
     private String openaiApiKey;
 
     @Value("${whereq.openai.base-url:https://api.openai.com/}")
