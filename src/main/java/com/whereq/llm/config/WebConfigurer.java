@@ -35,19 +35,19 @@ public class WebConfigurer implements WebFluxConfigurer {
         this.jHipsterProperties = jHipsterProperties;
     }
 
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        CorsConfiguration config = jHipsterProperties.getCors();
-        if (!CollectionUtils.isEmpty(config.getAllowedOrigins()) || !CollectionUtils.isEmpty(config.getAllowedOriginPatterns())) {
-            log.debug("Registering CORS filter");
-            source.registerCorsConfiguration("/api/**", config);
-            source.registerCorsConfiguration("/management/**", config);
-            source.registerCorsConfiguration("/v3/api-docs", config);
-            source.registerCorsConfiguration("/swagger-ui/**", config);
-        }
-        return source;
-    }
+    //    @Bean
+    //    public CorsConfigurationSource corsConfigurationSource() {
+    //        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    //        CorsConfiguration config = jHipsterProperties.getCors();
+    //        if (!CollectionUtils.isEmpty(config.getAllowedOrigins()) || !CollectionUtils.isEmpty(config.getAllowedOriginPatterns())) {
+    //            log.debug("Registering CORS filter");
+    //            source.registerCorsConfiguration("/api/**", config);
+    //            source.registerCorsConfiguration("/management/**", config);
+    //            source.registerCorsConfiguration("/v3/api-docs", config);
+    //            source.registerCorsConfiguration("/swagger-ui/**", config);
+    //        }
+    //        return source;
+    //    }
 
     @Bean
     @Order(-2) // The handler must have precedence over WebFluxResponseStatusExceptionHandler and Spring Boot's ErrorWebExceptionHandler
