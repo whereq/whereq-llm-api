@@ -1,4 +1,13 @@
-# Tony Zhang - Senior Software Developer
+# Unifying the Language of AI: A Universal API for Large Language Models
+This project aims to break down the barriers between you and the power of Large Language Models (LLMs) by providing a single, unified API to access the capabilities of all major players. Built with the latest Spring Boot 3.2.3 and Spring WebFlux, it offers a seamless and efficient way to interact with various LLMs.
+
+The project leverages Server-Sent Events (SSE) to push responses to the front-end in real-time, mimicking the experience of interacting with popular LLMs like GPT. Additionally, it integrates Swagger 3 to streamline API development and documentation.
+
+For developers, this project also includes a valuable mock service that can be seamlessly integrated into LLM front-end integration tests. This eliminates the need for a real LLM backend during testing, saving time and resources.
+
+
+# About Me
+## Tony Zhang - Senior Software Developer
 
 [![TZ](src/main/webapp/content/images/tz-with-hat-transparent-bg.png)](https://www.linkedin.com/in/dazhi-zhang-tony-19933019/)  
 
