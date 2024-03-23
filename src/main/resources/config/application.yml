@@ -131,5 +131,5 @@ whereq:
   upload:
     dir: C:/Users/googo/tmp/
   openai:
-    api-key: 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
+    api-key: sk-key
     base-url: https://api.openai.com/
