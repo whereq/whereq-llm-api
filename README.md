@@ -13,24 +13,6 @@ For developers, this project also includes a valuable mock service that can be s
 
 A well-qualified software developer, a fast learner, a highly motivated self-starter and a reliable person to work with.
 
-## Skills
-
-**Technical Skills:**
-
-* Programming Languages: Python, Java, JavaScript (React, Node.js), Go
-* Frameworks & Libraries: Spring Boot, Django, Express.js, TensorFlow, PyTorch
-* Cloud Platforms: AWS, GCP, Azure
-* Databases: SQL (MySQL, PostgreSQL), NoSQL (MongoDB, Cassandra)
-* DevOps: Git, Jenkins, Docker, Kubernetes
-* Version Control: Git
-
-**Soft Skills:**
-
-* Excellent communication and collaboration skills
-* Problem-solving and analytical skills
-* Ability to work under pressure and meet deadlines
-* Self-motivated and highly adaptable to new technologies
-
 ## Websites
 [Whereq.cc](https://www.whereq.cc) 
 - This website simplifies LLM access by offering a universal interface for interacting with different models.  
