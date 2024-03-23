@@ -5,6 +5,21 @@ The project leverages Server-Sent Events (SSE) to push responses to the front-en
 
 For developers, this project also includes a valuable mock service that can be seamlessly integrated into LLM front-end integration tests. This eliminates the need for a real LLM backend during testing, saving time and resources.
 
+# A common API set to unify access to various LLMs
+
+This API set aims to unify access to various **Large Language Models (LLMs)** like OpenAI, Gemini, and more. It provides a single, consistent interface for clients, simplifying integration and future expansion.
+
+## Key features include:
+
+**Abstraction**: Hides platform-specific details, allowing clients to interact with different LLMs without code modifications.
+
+**Future-proof Design**: Enables seamless integration of new LLMs without impacting client-side code.
+
+**Flexible Response Formats**: Supports both traditional HTTP responses and **Server-Sent Events (SSE)** for real-time data updates, similar to Spring AI but offering broader functionality.
+
+**Integrated Mock Service**: Provides a mock service layer for developers to test and debug their LLM client applications without incurring additional costs.
+
+
 **If you found this project helpful or enjoyed playing with it, why not consider buying me a coffee as a token of appreciation?** :D
 |![Buy Me a Coffee](https://github.com/whereq/whereq-playground/blob/main/buymeacoffee/bmc_qr.png)|
 |:-:|
