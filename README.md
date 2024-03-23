@@ -5,6 +5,10 @@ The project leverages Server-Sent Events (SSE) to push responses to the front-en
 
 For developers, this project also includes a valuable mock service that can be seamlessly integrated into LLM front-end integration tests. This eliminates the need for a real LLM backend during testing, saving time and resources.
 
+**If you found this project helpful or enjoyed playing with it, why not consider buying me a coffee as a token of appreciation?** :D
+|![Buy Me a Coffee](https://github.com/whereq/whereq-playground/blob/main/buymeacoffee/bmc_qr.png)|
+|:-:|
+|[Buy Me a Coffee](https://www.buymeacoffee.com/whereq)|
 
 # About Me
 ## Tony Zhang - Senior Software Developer
