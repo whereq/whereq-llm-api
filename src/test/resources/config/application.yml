@@ -79,7 +79,14 @@ jhipster:
 # ===================================================================
 
 # application:
-management:
-  health:
-    mail:
-      enabled: false
+
+reactor:
+  blockhound:
+    enabled: false
+
+whereq:
+  upload:
+    dir: C:/Users/googo/tmp/
+  openai:
+    api-key: sk-key
+    base-url: https://api.openai.com/
