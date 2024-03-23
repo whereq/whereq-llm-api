@@ -1,241 +1,56 @@
-# whereqLlmApi
+# Tony Zhang - Senior Software Developer
 
-This application was generated using JHipster 8.1.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v8.1.0](https://www.jhipster.tech/documentation-archive/v8.1.0).
+[![TZ](src/main/webapp/content/images/tz-with-hat-transparent-bg.png)](https://www.linkedin.com/in/dazhi-zhang-tony-19933019/)  
 
-## Project Structure
+A well-qualified software developer, a fast learner, a highly motivated self-starter and a reliable person to work with.
 
-Node is required for generation and recommended for development. `package.json` is always generated for a better development experience with prettier, commit hooks, scripts and so on.
+## Skills
 
-In the project root, JHipster generates configuration files for tools like git, prettier, eslint, husky, and others that are well known and you can find references in the web.
+**Technical Skills:**
 
-`/src/*` structure follows default Java structure.
+* Programming Languages: Python, Java, JavaScript (React, Node.js), Go
+* Frameworks & Libraries: Spring Boot, Django, Express.js, TensorFlow, PyTorch
+* Cloud Platforms: AWS, GCP, Azure
+* Databases: SQL (MySQL, PostgreSQL), NoSQL (MongoDB, Cassandra)
+* DevOps: Git, Jenkins, Docker, Kubernetes
+* Version Control: Git
 
-- `.yo-rc.json` - Yeoman configuration file
-  JHipster configuration is stored in this file at `generator-jhipster` key. You may find `generator-jhipster-*` for specific blueprints configuration.
-- `.yo-resolve` (optional) - Yeoman conflict resolver
-  Allows to use a specific action when conflicts are found skipping prompts for files that matches a pattern. Each line should match `[pattern] [action]` with pattern been a [Minimatch](https://github.com/isaacs/minimatch#minimatch) pattern and action been one of skip (default if ommited) or force. Lines starting with `#` are considered comments and are ignored.
-- `.jhipster/*.json` - JHipster entity configuration files
+**Soft Skills:**
 
-- `npmw` - wrapper to use locally installed npm.
-  JHipster installs Node and npm locally using the build tool by default. This wrapper makes sure npm is installed locally and uses it avoiding some differences different versions can cause. By using `./npmw` instead of the traditional `npm` you can configure a Node-less environment to develop or test your application.
-- `/src/main/docker` - Docker configurations for the application and services that the application depends on
+* Excellent communication and collaboration skills
+* Problem-solving and analytical skills
+* Ability to work under pressure and meet deadlines
+* Self-motivated and highly adaptable to new technologies
 
-## Development
+## Websites
+[Whereq.cc](https://www.whereq.cc) 
+- This website simplifies LLM access by offering a universal interface for interacting with different models.  
 
-### Doing API-First development using openapi-generator-cli
+[Whereq.com](https://www.whereq.com) 
+- This website specializes in web2.0 applications for the Real Estate Industry. Additionally, offering OpenAI integration and practical applications with Spring Boot.
 
-[OpenAPI-Generator]() is configured for this application. You can generate API code from the `src/main/resources/swagger/api.yml` definition file by running:
+[KeyToMarvel.com](https://www.keytomarvel.com/) 
+- Built on Keycloak, this platform integrates with Google and WeChat for social login. It's designed to become a multi-tenant identity and access management solution.
 
-```bash
-./mvnw generate-sources
-```
+## Add More...
+* Implemented a Java client to interface with **TREB** (Toronto Regional Real Estate Board) **MLS** (Multiple Listing Service) for pulling selling data based on the IDX protocol.
+* Constructed a scheduled batch service to retrieve selling data according to **TREB**'s policy and displayed it on an integrated **Google Map** website.
+* Designed and implemented our proprietary image compression algorithm to lower the expenses associated with accessing **Amazon S3**.
+* Developed a comprehensive API set using Spring **WebFlux** to efficiently communicate with **OpenAI** endpoints.
+* Developed a ChatGPT-like console using **Server-Sent Events (SSE)** for real-time communication from server to client.
+* Leveraged **Spark as a Service** to design and implement a solution for flattening Avro/Json data within a big-data platform. This service enables the transformation of nested data from Kafka and ElasticSearch.
+* The flattened data is stored in traditional SQL-friendly tables, with **HDFS** or **Minio** utilized as the persistent layer.
+* Additionally, built a data enrichment framework using Spark as a Service to process and transform various data sources into **CDM** (Canonical Data Models).
+* Designed and implemented a lightweight scaffold with Spring Boot **Webflux**, **R2DBC** and **MapStruct** to simplify the end-to-end API endpoints development and validation efforts and unify the convention across multiple projects.
 
-Then implements the generated delegate classes with `@Service` classes.
 
-To edit the `api.yml` definition file, you can use a tool such as [Swagger-Editor](). Start a local instance of the swagger-editor using docker by running: `docker compose -f src/main/docker/swagger-editor.yml up -d`. The editor will then be reachable at [http://localhost:7742](http://localhost:7742).
+## Skills
 
-Refer to [Doing API-First development][] for more details.
-Before you can build this project, you must install and configure the following dependencies on your machine:
+**Technical Skills:**
 
-1. [Node.js][]: We use Node to run a development web server and build the project.
-   Depending on your system, you can install Node either from source or as a pre-packaged bundle.
-
-After installing Node, you should be able to run the following command to install development tools.
-You will only need to run this command when dependencies change in [package.json](package.json).
-
-```
-npm install
-```
-
-We use npm scripts and [Webpack][] as our build system.
-
-Run the following commands in two separate terminals to create a blissful development experience where your browser
-auto-refreshes when files change on your hard drive.
-
-```
-./mvnw
-npm start
-```
-
-Npm is also used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by
-specifying a newer version in [package.json](package.json). You can also run `npm update` and `npm install` to manage dependencies.
-Add the `help` flag on any command to see how you can use it. For example, `npm help update`.
-
-The `npm run` command will list all of the scripts available to run for this project.
-
-### PWA Support
-
-JHipster ships with PWA (Progressive Web App) support, and it's turned off by default. One of the main components of a PWA is a service worker.
-
-The service worker initialization code is commented out by default. To enable it, uncomment the following code in `src/main/webapp/index.html`:
-
-```html
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./service-worker.js').then(function () {
-      console.log('Service Worker Registered');
-    });
-  }
-</script>
-```
-
-Note: [Workbox](https://developers.google.com/web/tools/workbox/) powers JHipster's service worker. It dynamically generates the `service-worker.js` file.
-
-### Managing dependencies
-
-For example, to add [Leaflet][] library as a runtime dependency of your application, you would run following command:
-
-```
-npm install --save --save-exact leaflet
-```
-
-To benefit from TypeScript type definitions from [DefinitelyTyped][] repository in development, you would run following command:
-
-```
-npm install --save-dev --save-exact @types/leaflet
-```
-
-Then you would import the JS and CSS files specified in library's installation instructions so that [Webpack][] knows about them:
-Note: There are still a few other things remaining to do for Leaflet that we won't detail here.
-
-For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
-
-## Building for production
-
-### Packaging as jar
-
-To build the final jar and optimize the whereqLlmApi application for production, run:
-
-```
-./mvnw -Pprod clean verify
-```
-
-This will concatenate and minify the client CSS and JavaScript files. It will also modify `index.html` so it references these new files.
-To ensure everything worked, run:
-
-```
-java -jar target/*.jar
-```
-
-Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
-
-Refer to [Using JHipster in production][] for more details.
-
-### Packaging as war
-
-To package your application as a war in order to deploy it to an application server, run:
-
-```
-./mvnw -Pprod,war clean verify
-```
-
-### JHipster Control Center
-
-JHipster Control Center can help you manage and control your application(s). You can start a local control center server (accessible on http://localhost:7419) with:
-
-```
-docker compose -f src/main/docker/jhipster-control-center.yml up
-```
-
-## Testing
-
-### Spring Boot tests
-
-To launch your application's tests, run:
-
-```
-./mvnw verify
-```
-
-### Client tests
-
-Unit tests are run by [Jest][]. They're located in [src/test/javascript/](src/test/javascript/) and can be run with:
-
-```
-npm test
-```
-
-## Others
-
-### Code quality using Sonar
-
-Sonar is used to analyse code quality. You can start a local Sonar server (accessible on http://localhost:9001) with:
-
-```
-docker compose -f src/main/docker/sonar.yml up -d
-```
-
-Note: we have turned off forced authentication redirect for UI in [src/main/docker/sonar.yml](src/main/docker/sonar.yml) for out of the box experience while trying out SonarQube, for real use cases turn it back on.
-
-You can run a Sonar analysis with using the [sonar-scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner) or by using the maven plugin.
-
-Then, run a Sonar analysis:
-
-```
-./mvnw -Pprod clean verify sonar:sonar -Dsonar.login=admin -Dsonar.password=admin
-```
-
-If you need to re-run the Sonar phase, please be sure to specify at least the `initialize` phase since Sonar properties are loaded from the sonar-project.properties file.
-
-```
-./mvnw initialize sonar:sonar -Dsonar.login=admin -Dsonar.password=admin
-```
-
-Additionally, Instead of passing `sonar.password` and `sonar.login` as CLI arguments, these parameters can be configured from [sonar-project.properties](sonar-project.properties) as shown below:
-
-```
-sonar.login=admin
-sonar.password=admin
-```
-
-For more information, refer to the [Code quality page][].
-
-### Using Docker to simplify development (optional)
-
-You can use Docker to improve your JHipster development experience. A number of docker-compose configuration are available in the [src/main/docker](src/main/docker) folder to launch required third party services.
-
-You can also fully dockerize your application and all the services that it depends on.
-To achieve this, first build a docker image of your app by running:
-
-```
-npm run java:docker
-```
-
-Or build a arm64 docker image when using an arm64 processor os like MacOS with M1 processor family running:
-
-```
-npm run java:docker:arm64
-```
-
-Then run:
-
-```
-docker compose -f src/main/docker/app.yml up -d
-```
-
-When running Docker Desktop on MacOS Big Sur or later, consider enabling experimental `Use the new Virtualization framework` for better processing performance ([disk access performance is worse](https://github.com/docker/roadmap/issues/7)).
-
-For more information refer to [Using Docker and Docker-Compose][], this page also contains information on the docker-compose sub-generator (`jhipster docker-compose`), which is able to generate docker configurations for one or several JHipster applications.
-
-## Continuous Integration (optional)
-
-To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
-
-[JHipster Homepage and latest documentation]: https://www.jhipster.tech
-[JHipster 8.1.0 archive]: https://www.jhipster.tech/documentation-archive/v8.1.0
-[Using JHipster in development]: https://www.jhipster.tech/documentation-archive/v8.1.0/development/
-[Using Docker and Docker-Compose]: https://www.jhipster.tech/documentation-archive/v8.1.0/docker-compose
-[Using JHipster in production]: https://www.jhipster.tech/documentation-archive/v8.1.0/production/
-[Running tests page]: https://www.jhipster.tech/documentation-archive/v8.1.0/running-tests/
-[Code quality page]: https://www.jhipster.tech/documentation-archive/v8.1.0/code-quality/
-[Setting up Continuous Integration]: https://www.jhipster.tech/documentation-archive/v8.1.0/setting-up-ci/
-[Node.js]: https://nodejs.org/
-[NPM]: https://www.npmjs.com/
-[OpenAPI-Generator]: https://openapi-generator.tech
-[Swagger-Editor]: https://editor.swagger.io
-[Doing API-First development]: https://www.jhipster.tech/documentation-archive/v8.1.0/doing-api-first-development/
-[Webpack]: https://webpack.github.io/
-[BrowserSync]: https://www.browsersync.io/
-[Jest]: https://facebook.github.io/jest/
-[Leaflet]: https://leafletjs.com/
-[DefinitelyTyped]: https://definitelytyped.org/
+* Programming Languages: Java, Python, Typescript, Spark
+* Frameworks & Libraries: Spring Boot, Next.js, React, Angular
+* Cloud Platforms: AWS, GCP, Azure
+* Databases: SQL (MySQL, PostgreSQL), NoSQL (MongoDB), Presto, Dremio
+* DevOps: Git, Jenkins, Docker, Kubernetes
+* Version Control: Git
