@@ -84,19 +84,34 @@ public abstract class OpenAiService<T, S> {
             .exchangeToMono(clientResponse -> handleResponse(clientResponse, getUrl(), clazz));
     }
 
+    /*
     String extractErrorMessage(String url, ClientResponse clientResponse) {
         String errorCode = clientResponse.statusCode().toString();
         String error = clientResponse.bodyToMono(String.class).block();
         return String.format("Error occurred while generating response from %s, error code=%s, error=%s", url, errorCode, error);
     }
+    */
+
+    Mono<String> extractErrorMessage(String url, ClientResponse clientResponse) {
+        String errorCode = clientResponse.statusCode().toString();
+        return clientResponse.bodyToMono(String.class)
+            .map(errorBody -> String.format("Error occurred while generating response from %s, error code=%s, error=%s", url, errorCode, errorBody))
+//            .onErrorReturn(throwable ->
+//                String.format("Error occurred while generating response from %s, error code=%s, error=%s", url, errorCode,
+//                    throwable.getMessage()));
+            .onErrorResume(throwable -> Mono.just(
+                String.format("Error occurred while generating response from %s, error code=%s, error=%s", url, errorCode, throwable.getMessage())));
+    }
+
 
     <T> Mono<T> handleResponse(ClientResponse clientResponse, String url, Class<T> clazz) {
         if (clientResponse.statusCode().is2xxSuccessful()) {
             return clientResponse.bodyToMono(clazz);
         } else {
-            String errorMessage = extractErrorMessage(url, clientResponse);
-            log.error("Error Message={}", errorMessage);
-            return Mono.error(new Exception(errorMessage));
+            // Asynchronously extract the error message
+            return extractErrorMessage(url, clientResponse)
+                .doOnNext(errorMessage -> log.error("Error Message={}", errorMessage))
+                .flatMap(errorMessage -> Mono.error(new Exception(errorMessage)));
         }
     }
 
@@ -104,9 +119,9 @@ public abstract class OpenAiService<T, S> {
         if (clientResponse.statusCode().is2xxSuccessful()) {
             return clientResponse.bodyToFlux(clazz);
         } else {
-            String errorMessage = extractErrorMessage(url, clientResponse);
-            log.error("Error Message={}", errorMessage);
-            return Flux.error(new Exception(errorMessage));
+            return extractErrorMessage(url, clientResponse)
+                .doOnNext(errorMessage -> log.error("Error Message={}", errorMessage))
+                .flatMapMany(errorMessage -> Flux.error(new Exception(errorMessage)));
         }
     }
 
@@ -114,9 +129,10 @@ public abstract class OpenAiService<T, S> {
         if (clientResponse.statusCode().is2xxSuccessful()) {
             return clientResponse.bodyToMono(typeReference);
         } else {
-            String errorMessage = extractErrorMessage(url, clientResponse);
-            log.error("Error Message={}", errorMessage);
-            return Mono.error(new Exception(errorMessage));
+            // Asynchronously extract the error message
+            return extractErrorMessage(url, clientResponse)
+                .doOnNext(errorMessage -> log.error("Error Message={}", errorMessage))
+                .flatMap(errorMessage -> Mono.error(new Exception(errorMessage)));
         }
     }
 }

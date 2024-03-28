@@ -11,6 +11,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -22,6 +23,9 @@ import java.util.concurrent.CountDownLatch;
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = { WhereQConfiguration.class, ChatCompletionService.class })
+@TestPropertySource(properties = {
+    "reactor.blockhound.enabled=false"
+})
 public class ChatCompletionServiceTest {
 
     @Autowired
