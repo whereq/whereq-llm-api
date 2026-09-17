@@ -29,7 +29,7 @@
     "packageName": "com.whereq.llm",
     "prodDatabaseType": "no",
     "reactive": true,
-    "rememberMeKey": "***REMOVED***",
+    "rememberMeKey": "",
     "searchEngine": false,
     "serverPort": null,
     "serverSideOptions": ["enableSwaggerCodegen:true"],

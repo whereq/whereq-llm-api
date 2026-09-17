@@ -18,4 +18,4 @@ spring:
   r2dbc:
     url: r2dbc:mariadb://localhost:3306/whereq?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
     username: whereq
-    password: ***REMOVED***
+    password: changeit
